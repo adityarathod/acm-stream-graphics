@@ -56,19 +56,19 @@ const Giveaway: FC<GiveawayProps> = ({ onDone }) => {
     await Promise.allSettled([
       title.start({
         opacity: 0,
-        transition: { ...defaultTransition, delay: 5, duration: 0.5 },
+        transition: { ...defaultTransition, delay: 6, duration: 0.5 },
       }),
       subtitle.start({
         opacity: 0,
-        transition: { ...defaultTransition, delay: 5, duration: 0.5 },
+        transition: { ...defaultTransition, delay: 6, duration: 0.5 },
       }),
       cardTop.start({
         opacity: 0,
-        transition: { ...defaultTransition, delay: 5, duration: 0.5 },
+        transition: { ...defaultTransition, delay: 6, duration: 0.5 },
       }),
       cardBtm.start({
         opacity: 0,
-        transition: { ...defaultTransition, delay: 5, duration: 0.5 },
+        transition: { ...defaultTransition, delay: 6, duration: 0.5 },
       }),
     ])
     if (onDone) onDone()
@@ -115,7 +115,7 @@ const Giveaway: FC<GiveawayProps> = ({ onDone }) => {
             to a random attendee!*
             <br />
             <span className="text-gray-300 text-lg">
-              *make sure you stay until the end :)
+              *make sure you stay until the end and are in our discord server :)
             </span>
           </motion.h1>
         </div>

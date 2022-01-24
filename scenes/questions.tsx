@@ -7,6 +7,9 @@ import Layer from '../components/layer'
 import Scene from '../components/scene'
 import { BottomBarLayer } from '../components/bottom-bar'
 
+import qrcodeDiscord from '../public/images/qrcode-discord.png'
+import qrcodeEmail from '../public/images/qrcode-email.png'
+
 const defaultTransition: Transition = {
   type: 'tween',
   duration: 0.75,
@@ -99,10 +102,11 @@ const Questions: FC<QuestionsProps> = ({ onDone }) => {
                   ping an officer in the discord!
                 </h1>
                 <Image
-                  src="/images/qrcode-discord.png"
+                  src={qrcodeDiscord}
                   alt="discord qrcode"
                   width={300}
                   height={300}
+                  className="rounded-xl"
                 />
                 <h1
                   className="text-4xl block w-full self-start text-center mt-6"
@@ -122,10 +126,11 @@ const Questions: FC<QuestionsProps> = ({ onDone }) => {
                   or, email us!
                 </h1>
                 <Image
-                  src="/images/qrcode-email.png"
+                  src={qrcodeEmail}
                   alt="email qrcode"
                   width={300}
                   height={300}
+                  className="rounded-xl"
                 />
                 <h1
                   className="text-4xl block w-full self-start text-center mt-6"

@@ -1,5 +1,4 @@
 import { FC, useEffect } from 'react'
-import Image from 'next/image'
 import { motion, Transition, useAnimation } from 'framer-motion'
 import { ControlsAnimationDefinition } from 'framer-motion/types/animation/types'
 

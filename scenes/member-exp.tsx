@@ -7,6 +7,8 @@ import Layer from '../components/layer'
 import Scene from '../components/scene'
 import { BottomBarLayer } from '../components/bottom-bar'
 
+import qrcode from '../public/images/qrcode-survey.png'
+
 const defaultTransition: Transition = {
   type: 'tween',
   duration: 0.75,
@@ -104,7 +106,7 @@ const MemberExp: FC<MemberExpProps> = ({ onDone }) => {
           animate={code}
         >
           <Image
-            src="/images/qrcode-survey.png"
+            src={qrcode}
             className="rounded-xl"
             width={400}
             height={400}

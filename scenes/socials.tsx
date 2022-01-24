@@ -7,6 +7,10 @@ import Layer from '../components/layer'
 import Scene from '../components/scene'
 import { BottomBarLayer } from '../components/bottom-bar'
 
+import qrcodeIG from '../public/images/qrcode-ig.png'
+import qrcodeFB from '../public/images/qrcode-fb.png'
+import qrcodeLI from '../public/images/qrcode-li.png'
+
 const defaultTransition: Transition = {
   type: 'tween',
   duration: 0.75,
@@ -99,10 +103,11 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
             <section className="w-full h-full flex flex-col items-center justify-center">
               <div className="text-center">
                 <Image
-                  src="/images/qrcode-ig.png"
+                  src={qrcodeIG}
                   alt="ig qrcode"
                   width={300}
                   height={300}
+                  className="rounded-xl"
                 />
                 <h1
                   className="text-4xl block w-full self-start text-center mt-6"
@@ -116,10 +121,11 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
             <section className="w-full h-full flex flex-col items-center justify-center">
               <div className="text-center">
                 <Image
-                  src="/images/qrcode-fb.png"
+                  src={qrcodeFB}
                   alt="fb qrcode"
                   width={300}
                   height={300}
+                  className="rounded-xl"
                 />
                 <h1
                   className="text-4xl block w-full self-start text-center mt-6"
@@ -133,10 +139,11 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
             <section className="w-full h-full flex flex-col items-center justify-center">
               <div className="text-center">
                 <Image
-                  src="/images/qrcode-li.png"
+                  src={qrcodeLI}
                   alt="li qrcode"
                   width={300}
                   height={300}
+                  className="rounded-xl"
                 />
                 <h1
                   className="text-4xl block w-full self-start text-center mt-6"
