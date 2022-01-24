@@ -32,7 +32,7 @@ const DiscordPlug: FC<DiscordPlugProps> = ({ onDone }) => {
     await Promise.allSettled([
       title.start({
         scale: 0.75,
-        y: -400,
+        y: -370,
         transition: { ...defaultTransition, delay: 3 },
       }),
       adContainer.start({
@@ -118,6 +118,7 @@ const DiscordPlug: FC<DiscordPlugProps> = ({ onDone }) => {
                 >
                   event discovery
                 </h1>
+
                 <div className="px-4 text-center text-3xl leading-loose">
                   <p>
                     discover dozens of events hosted by ACM and our partner

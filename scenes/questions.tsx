@@ -17,11 +17,11 @@ const fadeToOrigin: ControlsAnimationDefinition = {
   transition: { ...defaultTransition, delay: 0.5 },
 }
 
-interface SocialsPlugProps {
+interface QuestionsProps {
   onDone?: () => unknown
 }
 
-const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
+const Questions: FC<QuestionsProps> = ({ onDone }) => {
   const title = useAnimation()
   const adContainer = useAnimation()
 
@@ -72,19 +72,13 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
             initial={{ opacity: 0 }}
             animate={title}
           >
-            <p className="text-9xl text-center">follow us!</p>
-            <p
-              className="text-5xl text-center mt-6 max-w-5xl m-auto"
-              style={{
-                color: '#75ACFF',
-                fontFamily: 'Gilroy-Semibold',
-                lineHeight: 1.3,
-              }}
+            <p className="text-9xl text-center">questions?</p>
+            {/* <p
+              className="text-6xl text-center mt-6"
+              style={{ color: '#75ACFF' }}
             >
-              get reminded about events and
-              <br />
-              participate in fun social media contests!
-            </p>
+              acmutd.co/discord
+            </p> */}
           </motion.div>
         </div>
       </Layer>
@@ -94,12 +88,18 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
           initial={{ y: 50, opacity: 0 }}
           animate={adContainer}
         >
-          <div className="px-12 h-80 w-full grid grid-cols-3">
-            <section className="w-full h-full flex flex-col items-center justify-center">
+          <div className="px-12 h-[24rem] w-full m-auto grid grid-cols-2">
+            <section className="w-full h-full px-3 py-4 flex flex-col items-center justify-center">
               <div className="text-center">
+                <h1
+                  className="text-4xl block w-full self-start text-center mb-6"
+                  style={{ fontFamily: 'Gilroy-Semibold' }}
+                >
+                  ping an officer in the discord!
+                </h1>
                 <Image
-                  src="/images/qrcode-ig.png"
-                  alt="ig qrcode"
+                  src="/images/qrcode-discord.png"
+                  alt="discord qrcode"
                   width={300}
                   height={300}
                 />
@@ -107,33 +107,22 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
                   className="text-4xl block w-full self-start text-center mt-6"
                   style={{ fontFamily: 'Gilroy-Semibold', color: '#75ACFF' }}
                 >
-                  instagram.com/acmutd
+                  acmutd.co/discord
                 </h1>
               </div>
             </section>
 
-            <section className="w-full h-full flex flex-col items-center justify-center">
+            <section className="w-full h-full px-3 py-4 flex flex-col items-center justify-center">
               <div className="text-center">
-                <Image
-                  src="/images/qrcode-fb.png"
-                  alt="fb qrcode"
-                  width={300}
-                  height={300}
-                />
                 <h1
-                  className="text-4xl block w-full self-start text-center mt-6"
-                  style={{ fontFamily: 'Gilroy-Semibold', color: '#75ACFF' }}
+                  className="text-4xl block w-full self-start text-center mb-6"
+                  style={{ fontFamily: 'Gilroy-Semibold' }}
                 >
-                  facebook.com/acmatutd
+                  or, email us!
                 </h1>
-              </div>
-            </section>
-
-            <section className="w-full h-full flex flex-col items-center justify-center">
-              <div className="text-center">
                 <Image
-                  src="/images/qrcode-li.png"
-                  alt="li qrcode"
+                  src="/images/qrcode-email.png"
+                  alt="email qrcode"
                   width={300}
                   height={300}
                 />
@@ -141,7 +130,7 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
                   className="text-4xl block w-full self-start text-center mt-6"
                   style={{ fontFamily: 'Gilroy-Semibold', color: '#75ACFF' }}
                 >
-                  linkedin.com/company/acmutd
+                  contact@acmutd.co
                 </h1>
               </div>
             </section>
@@ -164,4 +153,4 @@ const SocialsPlug: FC<SocialsPlugProps> = ({ onDone }) => {
   )
 }
 
-export default SocialsPlug
+export default Questions

@@ -4,4 +4,5 @@
 
 body {
   font-family: 'Gilroy-Regular';
+  @apply text-white;
 }
