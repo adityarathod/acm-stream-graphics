@@ -10,6 +10,8 @@ import StreamWelcome from '../scenes/stream-welcome'
 import Giveaway from '../scenes/giveaway'
 import MemberExp from '../scenes/member-exp'
 import Waiting from '../scenes/waiting'
+import Countdown from '../scenes/countdown'
+import EndCard from '../scenes/end-card'
 
 import useSWR from 'swr'
 import fetcher from '../util/fetcher'
@@ -37,8 +39,8 @@ const Home: NextPage = () => {
       <MemberExp key="member-exp" onDone={incrementScene} />,
       <Waiting key="waiting" onDone={() => setScene(0)} />,
     ],
-    countdown: [],
-    poststream: [],
+    countdown: [<Countdown key="countdown" />],
+    poststream: [<EndCard />],
   }
 
   return (
