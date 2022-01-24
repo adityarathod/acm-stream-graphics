@@ -16,15 +16,19 @@ const fadeToOrigin: ControlsAnimationDefinition = {
   transition: { ...defaultTransition, delay: 0.5 },
 }
 
-const StreamWelcome: FC = () => {
+interface StreamWelcomeProps {
+  onDone?: () => unknown
+}
+
+const StreamWelcome: FC<StreamWelcomeProps> = ({ onDone }) => {
   const bottomText = useAnimation()
-  const topLogo = useAnimation()
+  const logo = useAnimation()
   const bottomBar = useAnimation()
 
   const animSequence = async () => {
     await Promise.allSettled([
       bottomText.start(fadeToOrigin),
-      topLogo.start({
+      logo.start({
         y: -350,
         opacity: 1,
         transition: { ...defaultTransition, delay: 0.5 },
@@ -34,18 +38,24 @@ const StreamWelcome: FC = () => {
       bottomText.start({
         y: 100,
         opacity: 0,
-        transition: { ...defaultTransition, delay: 3 },
+        transition: { ...defaultTransition, delay: 5 },
       }),
-      topLogo.start({
+      logo.start({
         y: 0,
-        scale: 1.5,
-        transition: { ...defaultTransition, delay: 3.1, duration: 1 },
+        scale: 1.75,
+        transition: { ...defaultTransition, delay: 5.1, duration: 1 },
       }),
       bottomBar.start({
         opacity: 1,
-        transition: { ...defaultTransition, delay: 3.5, duration: 0.5 },
+        y: 0,
+        transition: { ...defaultTransition, delay: 5.5, duration: 0.5 },
       }),
     ])
+    await logo.start({
+      opacity: 0,
+      transition: { ...defaultTransition, delay: 5, duration: 0.5 },
+    })
+    if (onDone) onDone()
   }
 
   useEffect(() => {
@@ -60,7 +70,7 @@ const StreamWelcome: FC = () => {
           src="/images/acmutd.svg"
           className="h-24"
           initial={{ y: -400, opacity: 0 }}
-          animate={topLogo}
+          animate={logo}
         />
       </Layer>
 
@@ -83,16 +93,18 @@ const StreamWelcome: FC = () => {
         </motion.h2>
       </Layer>
 
-      <Layer className="flex flex-col items-center justify-end p-12">
+      <Layer className="flex flex-col items-center justify-end">
         <motion.div
-          className="flex flex-row items-center w-full text-4xl"
-          initial={{ opacity: 0 }}
+          className="px-12 py-8 flex flex-row items-center w-full text-4xl"
+          initial={{ opacity: 0, y: 30 }}
           animate={bottomBar}
-          style={{ fontFamily: 'Gilroy-Semibold' }}
+          style={{
+            fontFamily: 'Gilroy-Semibold',
+          }}
         >
-          <div>spring 2022 kickoff.</div>
+          <div>acm spring 2022 kickoff.</div>
+          <div style={{ color: '#75ACFF' }}>&nbsp;starts soon.</div>
           <div className="flex-1"></div>
-          <div style={{ color: '#75ACFF' }}>starting soon</div>
         </motion.div>
       </Layer>
     </Scene>
