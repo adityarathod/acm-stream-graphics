@@ -1,9 +1,10 @@
 import { FC, useEffect } from 'react'
-import { LayoutGroup, motion, Transition, useAnimation } from 'framer-motion'
+import { motion, Transition, useAnimation } from 'framer-motion'
 import { ControlsAnimationDefinition } from 'framer-motion/types/animation/types'
 
 import Layer from '../components/layer'
 import Scene from '../components/scene'
+import { BottomBarLayer } from '../components/bottom-bar'
 
 const defaultTransition: Transition = {
   type: 'tween',
@@ -157,18 +158,7 @@ const DiscordPlug: FC<DiscordPlugProps> = ({ onDone }) => {
           </div>
         </motion.div>
       </Layer>
-      <Layer className="flex flex-col items-center justify-end">
-        <motion.div
-          className="px-12 py-8 flex flex-row items-center w-full text-4xl"
-          style={{
-            fontFamily: 'Gilroy-Semibold',
-          }}
-        >
-          <div>acm spring 2022 kickoff.</div>
-          <div style={{ color: '#75ACFF' }}>&nbsp;starts soon.</div>
-          <div className="flex-1"></div>
-        </motion.div>
-      </Layer>
+      <BottomBarLayer />
     </Scene>
   )
 }

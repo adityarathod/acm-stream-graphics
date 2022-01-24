@@ -31,7 +31,7 @@ export const SceneContainer: FC<SceneContainerProps> = ({
 }) => {
   return (
     <div
-      className={`w-screen h-screen flex items-center justify-center bg-black ${
+      className={`w-screen h-screen flex items-center justify-center overflow-hidden bg-black ${
         className ?? ''
       }`}
     >
