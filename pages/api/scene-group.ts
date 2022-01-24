@@ -1,19 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  trackName: string
+  sceneGroup: string
 }
 
-let trackName = 'nothing (yet)'
+let sceneGroup = 'prestream'
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
   if (req.method === 'POST' && req.body) {
-    trackName = req.body.trackName
-    res.status(200).json({ trackName })
+    sceneGroup = req.body.sceneGroup
+    res.status(200).json({ sceneGroup })
   } else {
-    res.status(200).json({ trackName })
+    res.status(200).json({ sceneGroup })
   }
 }
