@@ -91,7 +91,7 @@ const Countdown: FC<CountdownProps> = ({ onDone }) => {
           animate={bottomText}
           style={{ fontFamily: 'Gilroy-Bold', color: '#75ACFF' }}
         >
-          <CD date={Date.now() + 10000}>
+          <CD date={Date.now() + 20000}>
             <span>a moment.</span>
           </CD>
         </motion.h2>
