@@ -40,7 +40,7 @@ const Home: NextPage = () => {
       <Waiting key="waiting" onDone={() => setScene(0)} />,
     ],
     countdown: [<Countdown key="countdown" />],
-    poststream: [<EndCard />],
+    poststream: [<EndCard key="endcard" />],
   }
 
   return (
@@ -49,15 +49,6 @@ const Home: NextPage = () => {
         <title>Animation Test</title>
       </Head>
       {sceneGroups[curSceneGroup][scene]}
-      {/* {scene === 0 && <StreamWelcome onDone={incrementScene} />}
-      {scene === 1 && <DiscordPlug onDone={incrementScene} />}
-      {scene === 2 && <SocialsPlug onDone={incrementScene} />}
-      {scene === 3 && <Questions />} */}
-      {/* <SocialsPlug /> */}
-      {/* <Questions /> */}
-      {/* <Giveaway /> */}
-      {/* <MemberExp /> */}
-      {/* <Waiting /> */}
     </SceneContainer>
   )
 }
