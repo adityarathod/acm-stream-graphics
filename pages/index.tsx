@@ -46,7 +46,7 @@ const Home: NextPage = () => {
   return (
     <SceneContainer>
       <Head>
-        <title>Animation Test</title>
+        <title>Animation</title>
       </Head>
       {sceneGroups[curSceneGroup][scene]}
     </SceneContainer>

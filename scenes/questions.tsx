@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react'
 import Image from 'next/image'
-import { motion, Transition, useAnimation } from 'framer-motion'
-import { ControlsAnimationDefinition } from 'framer-motion/types/animation/types'
+import { motion, useAnimation } from 'framer-motion'
+import defaultTransition from '../util/default-transition'
 
 import Layer from '../components/layer'
 import Scene from '../components/scene'
@@ -9,17 +9,6 @@ import { BottomBarLayer } from '../components/bottom-bar'
 
 import qrcodeDiscord from '../public/images/qrcode-discord.png'
 import qrcodeEmail from '../public/images/qrcode-email.png'
-
-const defaultTransition: Transition = {
-  type: 'tween',
-  duration: 0.75,
-}
-
-const fadeToOrigin: ControlsAnimationDefinition = {
-  y: 0,
-  opacity: 1,
-  transition: { ...defaultTransition, delay: 0.5 },
-}
 
 interface QuestionsProps {
   onDone?: () => unknown
@@ -77,12 +66,6 @@ const Questions: FC<QuestionsProps> = ({ onDone }) => {
             animate={title}
           >
             <p className="text-9xl text-center">questions?</p>
-            {/* <p
-              className="text-6xl text-center mt-6"
-              style={{ color: '#75ACFF' }}
-            >
-              acmutd.co/discord
-            </p> */}
           </motion.div>
         </div>
       </Layer>

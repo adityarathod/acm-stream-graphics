@@ -92,12 +92,6 @@ const Giveaway: FC<GiveawayProps> = ({ onDone }) => {
             animate={title}
           >
             <p className="text-9xl text-center">kickoff giveaway 🎉</p>
-            {/* <p
-              className="text-6xl text-center mt-6"
-              style={{ color: '#75ACFF' }}
-            >
-              acmutd.co/discord
-            </p> */}
           </motion.div>
         </div>
       </Layer>

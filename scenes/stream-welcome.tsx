@@ -1,15 +1,11 @@
 import { FC, useEffect } from 'react'
-import { motion, Transition, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { ControlsAnimationDefinition } from 'framer-motion/types/animation/types'
+import defaultTransition from '../util/default-transition'
 
 import Layer from '../components/layer'
 import Scene from '../components/scene'
 import BottomBar from '../components/bottom-bar'
-
-const defaultTransition: Transition = {
-  type: 'tween',
-  duration: 0.75,
-}
 
 const fadeToOrigin: ControlsAnimationDefinition = {
   y: 0,

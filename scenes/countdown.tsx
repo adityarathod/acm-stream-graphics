@@ -1,16 +1,12 @@
 import { FC, useEffect } from 'react'
-import { motion, Transition, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { ControlsAnimationDefinition } from 'framer-motion/types/animation/types'
+import defaultTransition from '../util/default-transition'
 
 import Layer from '../components/layer'
 import Scene from '../components/scene'
 import BottomBar from '../components/bottom-bar'
 import CD from 'react-countdown'
-
-const defaultTransition: Transition = {
-  type: 'tween',
-  duration: 0.75,
-}
 
 const fadeToOrigin: ControlsAnimationDefinition = {
   y: 0,
@@ -36,27 +32,6 @@ const Countdown: FC<CountdownProps> = ({ onDone }) => {
         transition: { ...defaultTransition, delay: 0.5 },
       }),
     ])
-    // await Promise.allSettled([
-    //   bottomText.start({
-    //     y: 100,
-    //     opacity: 0,
-    //     transition: { ...defaultTransition, delay: 5 },
-    //   }),
-    //   logo.start({
-    //     y: 0,
-    //     scale: 1.75,
-    //     transition: { ...defaultTransition, delay: 5.1, duration: 1 },
-    //   }),
-    //   bottomBar.start({
-    //     opacity: 1,
-    //     y: 0,
-    //     transition: { ...defaultTransition, delay: 5.5, duration: 0.5 },
-    //   }),
-    // ])
-    // await logo.start({
-    //   opacity: 0,
-    //   transition: { ...defaultTransition, delay: 5, duration: 0.5 },
-    // })
     if (onDone) onDone()
   }
 
